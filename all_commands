@@ -1,0 +1,51 @@
+$ cat lorem.txt | less
+
+$ cat lorem.txt | wc
+45    1853   12577 (how many words, characters)
+
+$ ls > list.txt
+
+$ ls /noreal 1>output.txt 2>error.txt
+
+$ command -V echo
+echo is a shell builtin
+$ command -V df
+df is /usr/bin/df
+
+$ help
+
+$ echo {1..10}
+1 2 3 4 5 6 7 8 9 10
+$ echo {10..1}
+10 9 8 7 6 5 4 3 2 1
+
+$ echo {1..20..2}
+1 3 5 7 9 11 13 15 17 19
+$ echo {A..Z..3}
+A D G J M P S V Y
+
+touch file_{1..5}.txt
+rm file_*
+
+head -n1 {dir1,dir2,dir3}/lorem.txt
+
+$ greeting="Hello there"
+$ echo $greeting
+    Hello there
+$ echo ${greeting:6}
+    there
+$ echo ${greeting/there/everybody}
+    Hello everybody
+$ echo ${greeting//e/_} 
+    H_llo th_r_
+$ echo ${greeting/e/_} 
+    H_llo there
+
+$ uname
+Linux
+$ uname -r
+6.2.0-1014-azure
+$ echo "The kernel is $(uname -r)."
+The kernel is 6.2.0-1014-azure.
+$ echo "Result: $(python3 -c 'print("Hello from Python!")' | tr [a-z] [A-Z])"
+Result: HELLO FROM PYTHON!
